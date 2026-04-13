@@ -25,7 +25,6 @@ body {
 }
 
 /* 🌌 étoiles */
- {/* 🌌 étoiles */
 .stars {
   position: fixed;
   top: 0;
@@ -35,7 +34,7 @@ body {
   pointer-events: none;
 }
 
-/* étoiles couche 1 (grosses + glow) */
+/* étoiles couche 1 */
 .stars::before {
   content: "";
   position: absolute;
@@ -54,11 +53,10 @@ body {
     750px 300px white;
 
   filter: drop-shadow(0 0 6px #00ffd5);
-
-  animation: twinkle 1.5s infinite alternate;
+  animation: twinkle 2s infinite alternate;
 }
 
-/* étoiles couche 2 (plus petites mais lumineuses) */
+/* étoiles couche 2 */
 .stars::after {
   content: "";
   position: absolute;
@@ -75,80 +73,19 @@ body {
     700px 200px white;
 
   filter: drop-shadow(0 0 4px #6a5cff);
-
-  animation: twinkle 2.5s infinite alternate;
-  opacity: 0.8;
-}
-
-/* ✨ scintillement boosté */
-@keyframes twinkle {
-  0% {
-    opacity: 0.2;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1.6);
-  }
-}
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-/* étoiles couche 1 */
-.stars::before {
-  content: "";
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: white;
-  border-radius: 50%;
-
-  box-shadow:
-    20px 30px white,
-    80px 120px white,
-    150px 200px white,
-    300px 80px white,
-    450px 250px white,
-    600px 150px white,
-    750px 300px white;
-
-  animation: twinkle 2s infinite alternate;
-}
-
-/* étoiles couche 2 */
-.stars::after {
-  content: "";
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: white;
-  border-radius: 50%;
-
-  box-shadow:
-    60px 80px white,
-    200px 300px white,
-    350px 150px white,
-    500px 400px white,
-    700px 200px white;
-
   animation: twinkle 3s infinite alternate;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 /* ✨ animation */
 @keyframes twinkle {
   0% {
     opacity: 0.3;
-    transform: scale(1);
+    transform: scale(0.9);
   }
   100% {
     opacity: 1;
-    transform: scale(1.3);
+    transform: scale(1.4);
   }
 }
 
@@ -166,18 +103,15 @@ h1 {
 }
 
 @keyframes glow {
-  0% {
+  0%, 100% {
     text-shadow: 0 0 10px #00ffd5, 0 0 20px #6a5cff;
   }
   50% {
     text-shadow: 0 0 25px #00ffd5, 0 0 40px #6a5cff;
   }
-  100% {
-    text-shadow: 0 0 10px #00ffd5, 0 0 20px #6a5cff;
-  }
 }
 
-/* ✨ texte */
+/* texte */
 p {
   font-size: 18px;
   margin-top: 10px;
@@ -185,7 +119,7 @@ p {
   opacity: 0.9;
 }
 
-/* 🌠 menu */
+/* menu */
 .menu {
   margin-top: 40px;
   display: flex;
@@ -206,7 +140,7 @@ p {
   box-shadow: 0 0 12px rgba(0, 255, 213, 0.4);
 }
 
-/* 🌙 image */
+/* image */
 .image {
   margin-top: 40px;
 }
@@ -223,7 +157,6 @@ p {
 
 <body>
 
-  <!-- étoiles -->
   <div class="stars"></div>
 
   <h1>LUMINA</h1>
