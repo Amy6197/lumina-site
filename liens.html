@@ -12,31 +12,50 @@
       background: url('./galaxie.jpg') no-repeat center center fixed;
       background-size: cover;
 
-      color: white;
       font-family: Arial, sans-serif;
       text-align: center;
+      color: white;
     }
 
-    h1 {
-      margin-top: 60px;
+    .menu {
+      margin-top: 120px;
     }
 
-    a {
+    .menu a {
       display: block;
-      margin: 12px;
+      margin: 15px;
       color: #00ffd5;
       text-decoration: none;
       font-weight: bold;
+      font-size: 18px;
+    }
+
+    .menu a:hover {
+      text-shadow: 0 0 10px #00ffd5;
+    }
+
+    .back {
+      margin-top: 50px;
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      opacity: 0.8;
+    }
+
+    .back:hover {
+      opacity: 1;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>Liens Lumina</h1>
+  <div class="menu">
+    <a href="index.html">Accueil</a>
+    <a href="contenu.html">Contenu</a>
+  </div>
 
-  <a href="index.html">Accueil</a>
-  <a href="contenu.html">Contenu</a>
+  <a class="back" href="index.html">← Retour à l'accueil</a>
 
 </body>
 </html>
