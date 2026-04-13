@@ -5,159 +5,138 @@
   <title>Lumina</title>
 
   <style>
-body {
-  margin: 0;
-  padding: 0;
+    body {
+      margin: 0;
+      padding: 0;
 
-  background: url('./galaxie.jpg') no-repeat center center fixed;
-  background-size: cover;
+      background: url('./galaxie.jpg') no-repeat center center fixed;
+      background-size: cover;
 
-  color: white;
-  font-family: Arial, sans-serif;
+      color: white;
+      font-family: Arial, sans-serif;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-  min-height: 100vh;
-  text-align: center;
-}
+      min-height: 100vh;
+      text-align: center;
 
-/* 🌌 étoiles */
-.stars {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
+      overflow: hidden;
+    }
 
-/* étoiles couche 1 */
-.stars::before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: white;
-  border-radius: 50%;
+    /* 🌌 pluie d'étoiles */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
 
-  box-shadow:
-    20px 30px white,
-    80px 120px white,
-    150px 200px white,
-    300px 80px white,
-    450px 250px white,
-    600px 150px white,
-    750px 300px white;
+    .star {
+      position: absolute;
+      top: -10px;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #00ffd5;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
 
-  filter: drop-shadow(0 0 6px #00ffd5);
-  animation: twinkle 2s infinite alternate;
-}
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
 
-/* étoiles couche 2 */
-.stars::after {
-  content: "";
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: white;
-  border-radius: 50%;
+    /* 🌌 titre */
+    h1 {
+      font-size: 64px;
+      letter-spacing: 4px;
+      margin: 0;
 
-  box-shadow:
-    60px 80px white,
-    200px 300px white,
-    350px 150px white,
-    500px 400px white,
-    700px 200px white;
+      text-shadow:
+        0 0 10px #00ffd5,
+        0 0 20px #6a5cff;
 
-  filter: drop-shadow(0 0 4px #6a5cff);
-  animation: twinkle 3s infinite alternate;
-  opacity: 0.8;
-}
+      animation: glow 3s infinite ease-in-out;
+      z-index: 2;
+    }
 
-/* ✨ animation */
-@keyframes twinkle {
-  0% {
-    opacity: 0.3;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1.4);
-  }
-}
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 10px #00ffd5, 0 0 20px #6a5cff;
+      }
+      50% {
+        text-shadow: 0 0 25px #00ffd5, 0 0 40px #6a5cff;
+      }
+    }
 
-/* 🌌 titre */
-h1 {
-  font-size: 64px;
-  letter-spacing: 4px;
-  margin: 0;
+    p {
+      font-size: 18px;
+      margin-top: 10px;
+      max-width: 600px;
+      opacity: 0.9;
+      z-index: 2;
+    }
 
-  text-shadow:
-    0 0 10px #00ffd5,
-    0 0 20px #6a5cff;
+    /* 🌠 menu */
+    .menu {
+      margin-top: 40px;
+      display: flex;
+      gap: 25px;
+      z-index: 2;
+    }
 
-  animation: glow 3s infinite ease-in-out;
-}
+    .menu a {
+      color: #00ffd5;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
 
-@keyframes glow {
-  0%, 100% {
-    text-shadow: 0 0 10px #00ffd5, 0 0 20px #6a5cff;
-  }
-  50% {
-    text-shadow: 0 0 25px #00ffd5, 0 0 40px #6a5cff;
-  }
-}
+    .menu a:hover {
+      background: rgba(0, 255, 213, 0.15);
+      box-shadow: 0 0 12px rgba(0, 255, 213, 0.4);
+    }
 
-/* texte */
-p {
-  font-size: 18px;
-  margin-top: 10px;
-  max-width: 600px;
-  opacity: 0.9;
-}
+    /* 🌙 image */
+    .image {
+      margin-top: 40px;
+      z-index: 2;
+    }
 
-/* menu */
-.menu {
-  margin-top: 40px;
-  display: flex;
-  gap: 25px;
-}
+    .image img {
+      width: 180px;
+      border-radius: 14px;
+      box-shadow:
+        0 0 20px rgba(0,255,213,0.3),
+        0 10px 30px rgba(0,0,0,0.5);
+    }
 
-.menu a {
-  color: #00ffd5;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 14px;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.menu a:hover {
-  background: rgba(0, 255, 213, 0.15);
-  box-shadow: 0 0 12px rgba(0, 255, 213, 0.4);
-}
-
-/* image */
-.image {
-  margin-top: 40px;
-}
-
-.image img {
-  width: 180px;
-  border-radius: 14px;
-  box-shadow:
-    0 0 20px rgba(0,255,213,0.3),
-    0 10px 30px rgba(0,0,0,0.5);
-}
   </style>
 </head>
 
 <body>
 
-  <div class="stars"></div>
+  <!-- 🌌 étoiles -->
+  <div class="stars" id="stars"></div>
 
   <h1>LUMINA</h1>
 
@@ -172,6 +151,40 @@ p {
   <div class="image">
     <img src="./galaxie.jpg" alt="image">
   </div>
+
+  <script>
+    const starsContainer = document.getElementById("stars");
+
+    function createStar() {
+      const star = document.createElement("div");
+      star.classList.add("star");
+
+      // position horizontale aléatoire
+      star.style.left = Math.random() * 100 + "vw";
+
+      // taille aléatoire
+      const size = Math.random() * 2 + 1;
+      star.style.width = size + "px";
+      star.style.height = size + "px";
+
+      // durée aléatoire
+      const duration = Math.random() * 5 + 3;
+      star.style.animationDuration = duration + "s";
+
+      // délai aléatoire
+      star.style.animationDelay = Math.random() * 5 + "s";
+
+      starsContainer.appendChild(star);
+
+      // supprimer après animation
+      setTimeout(() => {
+        star.remove();
+      }, duration * 1000);
+    }
+
+    // génération continue
+    setInterval(createStar, 80);
+  </script>
 
 </body>
 </html>
