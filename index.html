@@ -3,58 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <title>Lumina</title>
+
   <style>
     body {
+      background: #0f0f0f;
+      color: white;
       font-family: Arial, sans-serif;
-      background-color: #0f0f0f;
-      color: #ffffff;
       text-align: center;
-      padding: 50px;
+      padding: 60px 20px;
+      line-height: 1.7;
     }
+
     h1 {
-      font-size: 40px;
+      font-size: 52px;
       margin-bottom: 10px;
+      letter-spacing: 2px;
     }
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-      max-width: 600px;
-      margin: 10px auto;
-    }
-    a {
-      display: block;
-      margin-top: 15px;
+
+    .menu a {
+      margin: 0 15px;
       color: #00ffd5;
       text-decoration: none;
+      font-weight: bold;
+    }
+
+    .menu {
+      margin: 30px 0;
+    }
+
+    .links a {
+      display: block;
+      margin: 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      color: #00ffd5;
+    }
+
+    p {
+      max-width: 650px;
+      margin: 20px auto;
+      font-size: 18px;
+      opacity: 0.9;
     }
   </style>
 </head>
+
 <body>
 
   <h1>Lumina</h1>
 
-  <p><em>Revenir à soi. Se libérer. Créer une vie alignée.</em></p>
-
   <p>
-    J’explore un chemin vers plus de liberté, de conscience et d’autonomie.<br>
-    Je partage ce que j’apprends : marketing digital, respect de soi, évolution intérieure.<br>
-    Pour celles et ceux qui sentent qu’il est temps de changer.
+    Revenir à soi. Se libérer. Créer une vie alignée.<br>
+    Je partage un chemin vers plus de conscience et d’autonomie.
   </p>
 
- <a href="liens.html" style="margin:0 20px; color:#00ffd5; text-decoration:none;">
-Liens
-</a>
+  <div class="menu">
+    <a href="index.html">Accueil</a>
+    <a href="contenu.html">Contenu</a>
+    <a href="liens.html">Liens</a>
+  </div>
 
-</body><div style="text-align:center; margin-bottom:40px;">
-  <a href="index.html" style="margin:0 15px; color:#00ffd5; text-decoration:none; font-weight:bold;">
-    Accueil
-  </a>
+  <div class="links">
+    <a href="#">← Me suivre</a>
+    <a href="#">← Me contacter</a>
+  </div>
 
-  <a href="contenu.html" style="margin:0 15px; color:#00ffd5; text-decoration:none; font-weight:bold;">
-    Contenu
-  </a>
-
-  <a href="liens.html" style="margin:0 15px; color:#00ffd5; text-decoration:none; font-weight:bold;">
-    Liens
-  </a>
-</div>
+</body>
+</html>
