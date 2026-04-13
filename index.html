@@ -15,7 +15,6 @@
       color: white;
       font-family: Arial, sans-serif;
 
-      /* 🌟 centrage global */
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -25,18 +24,81 @@
       text-align: center;
     }
 
-    /* 🌌 titre principal */
+    /* 🌌 étoiles */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .stars::before,
+    .stars::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+
+      box-shadow:
+        20px 30px white,
+        120px 150px white,
+        200px 300px white,
+        300px 100px white,
+        500px 200px white,
+        700px 350px white;
+
+      animation: floatStars 6s infinite ease-in-out;
+      opacity: 0.6;
+    }
+
+    .stars::after {
+      box-shadow:
+        50px 80px white,
+        150px 220px white,
+        250px 320px white,
+        450px 150px white,
+        650px 300px white;
+
+      animation-duration: 10s;
+      opacity: 0.3;
+    }
+
+    @keyframes floatStars {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* 🌌 titre */
     h1 {
       font-size: 64px;
       letter-spacing: 4px;
       margin: 0;
 
       text-shadow:
-        0 0 15px #00ffd5,
-        0 0 30px #6a5cff;
+        0 0 10px #00ffd5,
+        0 0 20px #6a5cff;
+
+      animation: glow 3s infinite ease-in-out;
     }
 
-    /* ✨ sous-titre */
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 10px #00ffd5, 0 0 20px #6a5cff;
+      }
+      50% {
+        text-shadow: 0 0 25px #00ffd5, 0 0 40px #6a5cff;
+      }
+      100% {
+        text-shadow: 0 0 10px #00ffd5, 0 0 20px #6a5cff;
+      }
+    }
+
+    /* ✨ texte */
     p {
       font-size: 18px;
       margin-top: 10px;
@@ -55,11 +117,8 @@
       color: #00ffd5;
       text-decoration: none;
       font-weight: bold;
-      font-size: 16px;
-
       padding: 8px 14px;
       border-radius: 10px;
-
       transition: 0.3s;
     }
 
@@ -68,7 +127,7 @@
       box-shadow: 0 0 12px rgba(0, 255, 213, 0.4);
     }
 
-    /* 🌙 image centrale */
+    /* 🌙 image */
     .image {
       margin-top: 40px;
     }
@@ -76,15 +135,18 @@
     .image img {
       width: 180px;
       border-radius: 14px;
-
       box-shadow:
         0 0 20px rgba(0,255,213,0.3),
         0 10px 30px rgba(0,0,0,0.5);
     }
+
   </style>
 </head>
 
 <body>
+
+  <!-- étoiles -->
+  <div class="stars"></div>
 
   <h1>LUMINA</h1>
 
@@ -100,5 +162,5 @@
     <img src="./galaxie.jpg" alt="image">
   </div>
 
-</body><div class="stars"></div>
+</body>
 </html>
