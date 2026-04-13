@@ -26,7 +26,7 @@
       overflow: hidden;
     }
 
-    /* 🌌 étoiles */
+    /* 🌌 pluie d'étoiles */
     .stars {
       position: fixed;
       top: 0;
@@ -40,58 +40,38 @@
     .star {
       position: absolute;
       top: -10px;
-
-      width: 3px;
-      height: 3px;
-
+      width: 2px;
+      height: 2px;
       background: white;
       border-radius: 50%;
-
-      box-shadow:
-        0 0 8px #00ffd5,
-        0 0 14px #6a5cff;
-
-      opacity: 0.9;
-
-      animation: fall linear infinite, pulse 2s infinite ease-in-out;
+      box-shadow: 0 0 8px #00ffd5;
+      animation: fall linear infinite;
+      opacity: 0.8;
     }
 
-    /* chute */
     @keyframes fall {
       0% {
-        transform: translateY(-10vh) translateX(0);
+        transform: translateY(-10vh);
         opacity: 0;
       }
       10% {
         opacity: 1;
       }
       100% {
-        transform: translateY(110vh) translateX(25px);
+        transform: translateY(110vh);
         opacity: 0;
-      }
-    }
-
-    /* petit effet vivant */
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.4);
       }
     }
 
     /* 🌌 titre */
     h1 {
-      font-size: 90px;
-      letter-spacing: 6px;
+      font-size: 64px;
+      letter-spacing: 4px;
       margin: 0;
-      margin-top: -60px;
 
       text-shadow:
-        0 0 15px #00ffd5,
-        0 0 30px #6a5cff,
-        0 0 60px rgba(0,255,213,0.4);
+        0 0 10px #00ffd5,
+        0 0 20px #6a5cff;
 
       animation: glow 3s infinite ease-in-out;
       z-index: 2;
@@ -99,10 +79,10 @@
 
     @keyframes glow {
       0%, 100% {
-        text-shadow: 0 0 15px #00ffd5, 0 0 30px #6a5cff;
+        text-shadow: 0 0 10px #00ffd5, 0 0 20px #6a5cff;
       }
       50% {
-        text-shadow: 0 0 30px #00ffd5, 0 0 60px #6a5cff;
+        text-shadow: 0 0 25px #00ffd5, 0 0 40px #6a5cff;
       }
     }
 
@@ -114,7 +94,7 @@
       z-index: 2;
     }
 
-    /* menu */
+    /* 🌠 menu */
     .menu {
       margin-top: 40px;
       display: flex;
@@ -136,7 +116,7 @@
       box-shadow: 0 0 12px rgba(0, 255, 213, 0.4);
     }
 
-    /* image */
+    /* 🌙 image */
     .image {
       margin-top: 40px;
       z-index: 2;
@@ -155,7 +135,7 @@
 
 <body>
 
-  <!-- 🌠 étoiles -->
+  <!-- 🌌 étoiles -->
   <div class="stars" id="stars"></div>
 
   <h1>LUMINA</h1>
@@ -179,30 +159,30 @@
       const star = document.createElement("div");
       star.classList.add("star");
 
-      // position horizontale
+      // position horizontale aléatoire
       star.style.left = Math.random() * 100 + "vw";
 
-      // taille variable
+      // taille aléatoire
       const size = Math.random() * 2 + 1;
       star.style.width = size + "px";
       star.style.height = size + "px";
 
-      // durée différente pour chaque étoile
+      // durée aléatoire
       const duration = Math.random() * 5 + 3;
       star.style.animationDuration = duration + "s";
 
-      // décalage aléatoire
-      star.style.animationDelay = Math.random() * 2 + "s";
+      // délai aléatoire
+      star.style.animationDelay = Math.random() * 5 + "s";
 
       starsContainer.appendChild(star);
 
-      // suppression automatique
+      // supprimer après animation
       setTimeout(() => {
         star.remove();
       }, duration * 1000);
     }
 
-    // création continue
+    // génération continue
     setInterval(createStar, 80);
   </script>
 
