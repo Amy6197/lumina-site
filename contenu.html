@@ -5,15 +5,15 @@
   <title>Contenu - Lumina</title>
 
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+    }
 
-      background-image: url('./galaxie.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+    body {
+      background: url('./galaxie.jpg') no-repeat center center fixed !important;
+      background-size: cover !important;
 
       color: white;
       font-family: Arial, sans-serif;
@@ -38,10 +38,6 @@
       color: #00ffd5;
       text-decoration: none;
       font-weight: bold;
-    }
-
-    a:hover {
-      opacity: 0.7;
     }
   </style>
 </head>
